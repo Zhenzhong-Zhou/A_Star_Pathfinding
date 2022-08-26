@@ -21,13 +21,13 @@ public class KetInputs implements KeyListener {
     @Override
     public void keyPressed(KeyEvent e) {
         switch(e.getKeyCode()) {
-            case KeyEvent.VK_SPACE -> scene.autoSearch();
+            case KeyEvent.VK_SPACE -> scene.search();
             case KeyEvent.VK_ENTER -> {
                 long drawStart = 0;
                 drawStart = System.nanoTime();
 
-//                scene.autoSearch();
-                scene.search();
+                scene.autoSearch();
+
                 long drawEnd = System.nanoTime();
                 long duration = drawEnd - drawStart;
                 double second = (double) duration / 1000000000.0;

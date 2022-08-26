@@ -132,7 +132,7 @@ public class Scene extends JPanel {
     }
 
     public void search() {
-        if(! goalReached && step < 300) {
+        if(! goalReached) {
             int col = currentNode.col;
             int row = currentNode.row;
 
@@ -171,13 +171,13 @@ public class Scene extends JPanel {
 
             if(currentNode == goalNode) {
                 goalReached = true;
+                trackThePath();
             }
         }
-        step++;
     }
 
     public void autoSearch() {
-        while(! goalReached && step < 300) {
+        while(! goalReached && step < 300000) {
             int col = currentNode.col;
             int row = currentNode.row;
 
@@ -235,7 +235,7 @@ public class Scene extends JPanel {
         // Backtrack and draw the best path
         Node current = goalNode;
         while(current != startNode) {
-            current = currentNode.parent;
+            current = current.parent;
             if(current != startNode) {
                 current.setAsPath();
             }
