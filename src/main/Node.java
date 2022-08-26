@@ -14,13 +14,13 @@ public class Node extends JButton implements ActionListener {
         this.col = col;
         this.row = row;
 
-        setBackground(Color.WHITE);
-        setForeground(Color.BLACK);
+        setBackground(Color.white);
+        setForeground(Color.black);
         addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        setBackground(Color.ORANGE);
+        setBackground(Color.orange);
     }
 }

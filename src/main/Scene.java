@@ -6,12 +6,34 @@ import java.awt.*;
 import static utilities.Constant.SceneConstant.*;
 
 public class Scene extends JPanel {
+    // SCENE SETTINGS
+    final int maxCol = 15;
+    final int maxRow = 10;
+    final int nodeSize = 70;
+    final int sceneWidth = maxCol * nodeSize;
+    final int sceneHeight = maxRow * nodeSize;
+
     // NODE
-    Node[][] node = new Node[MAX_SCREEN_COL][MAX_SCREEN_ROW];
+    Node[][] node = new Node[maxCol][maxRow];
 
     public Scene() {
-        setSceneSize();
-        placeNodes();
+        this.setPreferredSize(new Dimension(sceneWidth, sceneHeight));
+        this.setBackground(Color.black);
+        this.setLayout(new GridLayout(maxRow, maxCol));
+
+        int col = 0;
+        int row = 0;
+
+        while(col < maxCol && row < maxRow) {
+            node[col][row] = new Node(col,row);
+            this.add(node[col][row]);
+
+            col++;
+            if(col == maxCol) {
+                col = 0;
+                row++;
+            }
+        }
     }
 
     private void setSceneSize() {
