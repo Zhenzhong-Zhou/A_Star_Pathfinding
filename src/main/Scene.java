@@ -234,7 +234,7 @@ public class Scene extends JPanel {
     private void trackThePath() {
         // Backtrack and draw the best path
         Node current = goalNode;
-        while(current!= startNode) {
+        while(current != startNode) {
             current = currentNode.parent;
             if(current != startNode) {
                 current.setAsPath();

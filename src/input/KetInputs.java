@@ -2,7 +2,6 @@ package input;
 
 import main.Scene;
 
-import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.text.DecimalFormat;
@@ -25,7 +24,7 @@ public class KetInputs implements KeyListener {
             case KeyEvent.VK_SPACE -> scene.autoSearch();
             case KeyEvent.VK_ENTER -> {
                 long drawStart = 0;
-                 drawStart = System.nanoTime();
+                drawStart = System.nanoTime();
 
 //                scene.autoSearch();
                 scene.search();

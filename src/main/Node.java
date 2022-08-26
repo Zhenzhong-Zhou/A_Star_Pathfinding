@@ -48,7 +48,7 @@ public class Node extends JButton implements ActionListener {
     }
 
     public void setAsChecked() {
-        if(start == false && goal == false) {
+        if(! start && ! goal) {
             this.setBorderPainted(false);
             setBackground(Color.ORANGE);
             setForeground(Color.BLACK);
